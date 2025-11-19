@@ -1,0 +1,89 @@
+import { useState } from "react";
+
+function App() {
+  const [peso, setPeso] = useState("");
+  const [altura, setAltura] = useState("");
+  const [imc, setImc] = useState(null);
+  const [classificacao, setClassificacao] = useState("");
+
+  function calcularIMC() {
+    if (!peso || !altura) return;
+
+    const alturaMetros = altura / 100;
+    const imcCalculado = (peso / (alturaMetros * alturaMetros)).toFixed(2);
+    setImc(imcCalculado);
+
+    if (imcCalculado < 18.5) setClassificacao("Abaixo do peso");
+    else if (imcCalculado < 24.9) setClassificacao("Peso normal");
+    else if (imcCalculado < 29.9) setClassificacao("Sobrepeso");
+    else setClassificacao("Obesidade");
+  }
+
+  return (
+    <div style={styles.container}>
+      <h2>Calculadora de IMC</h2>
+
+      <input
+        type="number"
+        placeholder="Peso (kg)"
+        value={peso}
+        onChange={(e) => setPeso(e.target.value)}
+        style={styles.input}
+      />
+
+      <input
+        type="number"
+        placeholder="Altura (cm)"
+        value={altura}
+        onChange={(e) => setAltura(e.target.value)}
+        style={styles.input}
+      />
+
+      <button onClick={calcularIMC} style={styles.button}>
+        Calcular
+      </button>
+
+      {imc && (
+        <div style={styles.resultado}>
+          <h3>Seu IMC: {imc}</h3>
+          <p>{classificacao}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+const styles = {
+  container: {
+    width: "300px",
+    margin: "40px auto",
+    padding: "20px",
+    background: "#f5f5f5",
+    borderRadius: "8px",
+    textAlign: "center",
+    fontFamily: "Arial",
+  },
+  input: {
+    width: "100%",
+    padding: "10px",
+    marginBottom: "10px",
+    fontSize: "16px",
+  },
+  button: {
+    width: "100%",
+    padding: "10px",
+    background: "#007bff",
+    color: "#fff",
+    border: "none",
+    borderRadius: "4px",
+    cursor: "pointer",
+  },
+  resultado: {
+    marginTop: "20px",
+    padding: "10px",
+    background: "#e6e6e6",
+    borderRadius: "6px",
+  },
+};
+
+export default App;
