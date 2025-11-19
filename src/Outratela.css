@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+  background-color: #fff8e1; 
+  color: #333;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #f57c00; 
+  font-size: 2.5em;
+  margin-top: 20px;
+}
+.calculator-container {
+  background-color: #ffcc80; 
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-group input {
+  padding: 10px;
+  width: 100%;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #f57c00; 
+  box-sizing: border-box;
+}
+
+button.calc-btn {
+  background-color: #f57c00; 
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.calc-btn:hover {
+  background-color: #e65100; 
+}
+
+.result {
+  margin-top: 20px;
+  background-color: #fff3e0; 
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.result h2 {
+  color: #f57c00;
+}

@@ -1,0 +1,134 @@
+:root{
+  --bg: #ffae00;
+  --card: #ffffff;
+  --primary: #f0a400;
+  --muted: #6b7280;
+  --danger: #ef4444;
+  --shadow: rgba(15,23,42,0.08);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}  
+
+* { box-sizing: border-box; }
+html,body,#root { height: 100%; margin:0; }
+
+.login-page {
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(160deg,#ebcb00 0%, #eba000 100%);
+  padding:24px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 6px 30px var(--shadow);
+  border: 1px solid rgb(255, 136, 0,0.04);
+}
+
+.logo {
+  margin: 0 0 18px 0;
+  font-size: 20px;
+  color: #ff7b00;
+  letter-spacing: 0.2px;
+}
+
+.label {
+  display:block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.input {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6edf3;
+  background: #ffffff;
+  font-size: 15px;
+  outline: none;
+  transition: box-shadow .15s, border-color .15s;
+}
+
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 6px 20px rgb(255, 153, 10,0.08);
+}
+
+.input.invalid {
+  border-color: var(--danger);
+}
+
+.field-help {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.password-row {
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.show-pass-btn {
+  background: transparent;
+  border: 1px solid #e6edf3;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #111827;
+  font-size: 13px;
+}
+
+.show-pass-btn:hover { filter: brightness(.97); }
+
+.error {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(239,68,68,0.08);
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.submit-btn {
+  margin-top: 16px;
+  width:100%;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(59,130,246,0.18);
+}
+
+.submit-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.extra-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+a.forgot { color: var(--primary); text-decoration:none; }
+a.forgot:hover { text-decoration:underline; }
+
+@media (max-width:420px){
+  .login-card { padding: 18px; border-radius: 10px; }
+}
